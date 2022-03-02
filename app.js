@@ -14,7 +14,15 @@ const hobbies = document.querySelector('.hobbies');
 // set event listeners
 
 selectElement.addEventListener('change', (event) => {
-    // call our render function here
+    const selected = event.target.value;
+    hobbies.innerHTML = '';
+    divContainer.classList.remove('Pete', 'Madden');
+
+    if (selected === 'one') {
+        renderPerson(0);
+    } else {
+        renderPerson(1);
+    }
 });
 
 function renderPerson(index) {
@@ -29,6 +37,7 @@ function renderPerson(index) {
         hobbies.appendChild(li);
     }
 }
+
 // get user input
 // use user input to update state
 // update DOM to reflect the new state
